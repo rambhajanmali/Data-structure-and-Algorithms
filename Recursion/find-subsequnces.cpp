@@ -5,7 +5,7 @@ using namespace std;
 void findSubSeq(string str, string output , int index, vector<string> &ans){
     //base case
     if(index >= str.length()){
-        //ans outpit string me build ho chuka h 
+        //ans outpit string me build ho chuka h
         //print kr do
         // cout<<"=> " <<output<<endl;
 

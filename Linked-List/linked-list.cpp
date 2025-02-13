@@ -16,6 +16,10 @@ class Node{
         this->data = data;
         this->next = NULL;
     }
+
+    ~Node(){
+        cout<<"Destructure called for: "<<this->data<<endl;
+    }
 };
 
 void printLL(Node* head){
@@ -115,6 +119,73 @@ void insertAtPosition(Node* &head, Node* &tail, int data, int position){
     newNode->next = curr;
 
   }
+};
+
+void deleteNode(Node* &head, Node* &tail, int position){
+//empty list
+if(head == NULL){
+    cout<<"connot delete, coz LL is empty"<<endl;
+    return;
+}
+
+if(head == tail){
+    //single element
+    Node* temp = head;
+    delete temp;
+    head = NULL;
+    tail = NULL;
+    return;
+}
+
+int len = getlength(head);
+
+  //delete from head
+if(position == 1){
+  //first node ko delete kr do
+  Node* temp = head;
+  head = head->next;
+  temp->next = NULL;
+  delete temp;
+}
+else if(position == len){
+    //last node ko delete kr do
+
+    //find prev
+    Node* prev = head;
+    while(prev->next != tail){
+        prev = prev->next;
+    }
+
+    //prev node ka link null kr do
+    prev->next = NULL;
+
+    //node delete karo
+    delete tail;
+
+    //update tail
+    tail = prev;
+}
+else{
+    //middle me koi node ko delete karna k 
+
+    //step1: set prev/curr pointers
+    Node* prev = NULL;
+    Node* curr =head;
+    while(position != 1){
+        position --;
+        prev =  curr;
+        curr = curr->next;
+    }
+
+    //step2: prev->next me curr-> next add kr do
+    prev-> next = curr-> next;
+
+    //step3: node isolate kr do
+    curr-> next = NULL;
+
+    //step4: delete node
+    delete curr;
+}
 }
 
 int main(){
@@ -124,9 +195,27 @@ int main(){
     insertAtTail(head,tail,20);
     insertAtTail(head,tail,30);
     insertAtTail(head,tail,40);
-    // printLL(head);
-    insertAtPosition(head,tail,25,3);
+
     printLL(head);
+    cout<<endl;
+
+    deleteNode(head,tail,1);
+    printLL(head);
+    cout<<endl;
+
+
+    // deleteNode(head,tail,4);
+    // printLL(head);
+    // cout<<endl;
+
+
+    // deleteNode(head,tail,1);
+    // printLL(head);
+    // cout<<endl;
+
+
+    // insertAtPosition(head,tail,25,3);
+    // printLL(head);
 
     // //creation of node
     // // Node a;

@@ -18,7 +18,7 @@ void solve(stack<int> &st, int & pos, int &ans){
     solve(st, pos, ans);
 
     //backtrak
-    st.push(temp);
+    st.push(temp);  
 }
 
 int getMiddleElement(stack<int> &st){

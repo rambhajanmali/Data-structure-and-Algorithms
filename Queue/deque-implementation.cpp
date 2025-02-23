@@ -67,7 +67,7 @@ class Deque{
 
     void popFront(){
        //underflow condition
-        //single element
+        //single element case
         //circular case
         //normal case
 

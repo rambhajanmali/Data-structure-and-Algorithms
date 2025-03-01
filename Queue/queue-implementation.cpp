@@ -108,6 +108,9 @@ int main(){
     cout<<"size of the queue is: " <<q.getSize();
 
     q.pop();
+
+    q.pop();
+    q.pop();
     q.print();
     cout<<"size of the queue is: " <<q.getSize();
 cout<<endl;

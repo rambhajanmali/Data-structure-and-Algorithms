@@ -111,11 +111,12 @@ int main(){
 
     q.pop();
     q.pop();
+    q.pop();
+    q.pop();
     q.print();
     cout<<"size of the queue is: " <<q.getSize();
 cout<<endl;
 
-q.push(60);
     cout<<"front element of the queue is: "<<q.getFront();
     return 0;
 }

@@ -36,7 +36,62 @@ Node* createdTree(){
     return root; 
 };
 
+void preOrderTraversal(Node* root){
+    //base case
+    if(root == NULL){
+        return;
+    }
+    //NLR
+    //N
+    cout<<root->data<<" ";
+    //L
+    preOrderTraversal(root->left);
+    //R
+    preOrderTraversal(root->right);
+}
+
+void inOrderTraversal(Node* root){
+    //base case
+    if(root == NULL){
+        return;
+    }
+    //LNR
+    //L
+    inOrderTraversal(root->left);
+    //N
+    cout<<root->data<<" ";
+    //R
+    inOrderTraversal(root->right);
+}
+
+void postOrderTraversal(Node* root){
+    //base case
+    if(root == NULL){
+        return;
+    }
+    //LRN
+    //L
+    postOrderTraversal(root->left);
+    //R
+    postOrderTraversal(root->right);
+    //N
+    cout<<root->data<<" ";
+}
+
 int main(){
     Node* root = createdTree();
+    // cout << root->data << endl;
+
+    cout<<"printing preorder traversal of the tree"<<endl;
+    preOrderTraversal(root);   
+    cout<<endl;
+
+    cout<<"printing inorder traversal of the tree"<<endl;
+    inOrderTraversal(root);
+    cout<<endl;
+
+    cout<<"printing postorder traversal of the tree"<<endl;
+    postOrderTraversal(root);
+    cout<<endl;
     return 0;
 }

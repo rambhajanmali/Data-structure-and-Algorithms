@@ -36,6 +36,7 @@ Node* createdTree(){
     return root; 
 };
 
+//preorder traversal in tree
 void preOrderTraversal(Node* root){
     //base case
     if(root == NULL){
@@ -50,6 +51,7 @@ void preOrderTraversal(Node* root){
     preOrderTraversal(root->right);
 }
 
+//inorder traversal in tree
 void inOrderTraversal(Node* root){
     //base case
     if(root == NULL){
@@ -64,6 +66,7 @@ void inOrderTraversal(Node* root){
     inOrderTraversal(root->right);
 }
 
+//postorder traversal in tree
 void postOrderTraversal(Node* root){
     //base case
     if(root == NULL){

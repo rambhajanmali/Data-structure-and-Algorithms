@@ -87,7 +87,8 @@ st.pop1();
 st.print();
 
 
-st.pop1();
+st.pop2();
 st.print();
+
     return 0;
 }
